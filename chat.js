@@ -4,8 +4,7 @@ const https = require('https');
 const { protect } = require('../middleware/auth');
 const Conversation = require('../models/Conversation');
 
-// OpenRouter API — free models, no credit card needed
-// Sign up at https://openrouter.ai and get a free API key
+
 function callAI(messages) {
   return new Promise((resolve, reject) => {
     const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -61,7 +60,7 @@ function callAI(messages) {
   });
 }
 
-// POST /api/chat/message
+
 router.post('/message', protect, async (req, res) => {
   const { message, conversationId } = req.body;
 
@@ -103,7 +102,7 @@ router.post('/message', protect, async (req, res) => {
 
     res.json({ reply: aiReply, conversationId: conversation._id });
   } catch (error) {
-    console.error('❌ Chat error:', error.message);
+    console.error('Chat error:', error.message);
     res.status(502).json({ message: error.message });
   }
 });
@@ -121,7 +120,6 @@ router.get('/conversations', protect, async (req, res) => {
   }
 });
 
-// GET /api/chat/conversations/:id
 router.get('/conversations/:id', protect, async (req, res) => {
   try {
     const conversation = await Conversation.findOne({
@@ -137,7 +135,7 @@ router.get('/conversations/:id', protect, async (req, res) => {
   }
 });
 
-// DELETE /api/chat/conversations/:id
+
 router.delete('/conversations/:id', protect, async (req, res) => {
   try {
     const conversation = await Conversation.findOneAndDelete({
