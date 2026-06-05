@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: #0e0e10;
+  color: #f0ede8;
+  font-family: 'DM Sans', sans-serif;
+  height: 100%;
+}
+
+#__next,
+main {
+  height: 100%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2c2b33; border-radius: 4px; }
+
+/* Markdown styles inside chat bubbles */
+.prose-chat p { margin-bottom: 0.5rem; }
+.prose-chat p:last-child { margin-bottom: 0; }
+.prose-chat code {
+  background: #0e0e10;
+  border: 1px solid #2c2b33;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 12px;
+  font-family: 'Fira Code', monospace;
+}
+.prose-chat pre {
+  background: #0e0e10;
+  border: 1px solid #2c2b33;
+  border-radius: 8px;
+  padding: 12px;
+  overflow-x: auto;
+  margin: 8px 0;
+  font-size: 12px;
+}
+.prose-chat pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.prose-chat ul, .prose-chat ol {
+  margin: 6px 0 6px 1.2rem;
+}
+.prose-chat li { margin-bottom: 2px; }
+.prose-chat strong { font-weight: 500; color: #f0ede8; }
