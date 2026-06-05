@@ -20,12 +20,12 @@ main {
   height: 100%;
 }
 
-/* Scrollbar */
+
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #2c2b33; border-radius: 4px; }
 
-/* Markdown styles inside chat bubbles */
+
 .prose-chat p { margin-bottom: 0.5rem; }
 .prose-chat p:last-child { margin-bottom: 0; }
 .prose-chat code {
