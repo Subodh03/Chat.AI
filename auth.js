@@ -9,7 +9,7 @@ const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '7d' });
 };
 
-// POST /api/auth/register
+
 router.post(
   '/register',
   [
@@ -47,7 +47,7 @@ router.post(
   }
 );
 
-// POST /api/auth/login
+
 router.post(
   '/login',
   [
@@ -80,7 +80,6 @@ router.post(
   }
 );
 
-// GET /api/auth/me  — verify token & return user
 router.get('/me', protect, (req, res) => {
   res.json({ user: { id: req.user._id, name: req.user.name, email: req.user.email } });
 });
